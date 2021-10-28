@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: master-application
+
+server:
+  port: 8081
+
+app:
+  external-service:
+    host: http://localhost:8082
+
+opentracing:
+  jaeger:
+    udp-sender:
+      host: localhost
+      port: 6831

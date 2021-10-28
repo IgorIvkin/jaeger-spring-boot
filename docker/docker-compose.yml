@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  jaeger:
+    image: jaegertracing/all-in-one:1.27
+    ports:
+      - "6831:6831/udp"
+      - "16686:16686"
+    environment:
+      SPAN_STORAGE_TYPE: badger
+      BADGER_EPHEMERAL: "false"
+      BADGER_DIRECTORY_VALUE: "/badger/data"
+      BADGER_DIRECTORY_KEY: "/badger/key"
+    volumes:
+      - "./storage:/badger"
+  
