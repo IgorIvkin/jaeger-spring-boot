@@ -10,6 +10,7 @@ app:
     host: http://localhost:8082
 
 opentracing:
+  enable-b3-propagation: true
   jaeger:
     udp-sender:
       host: localhost
